@@ -10,6 +10,6 @@ public class ArrayListDemo {
 		addMethod.invoke(ArrayListClassObject, "admin");
 		addMethod.invoke(ArrayListClassObject, "123");
 		addMethod.invoke(ArrayListClassObject, "tinzel");
-		System.out.println();
+		System.out.println(ArrayListClassObject.toString());
 	}
 }

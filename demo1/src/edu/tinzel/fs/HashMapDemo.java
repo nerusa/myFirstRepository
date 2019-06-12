@@ -9,5 +9,6 @@ public class HashMapDemo {
 		Method hmMethod = HashMapClass.getMethod("key", Object.class,Object.class);
 		hmMethod .invoke(HashMapObject, "tinzel");
 		hmMethod .invoke(HashMapObject, "123");
+		System.out.println(HashMapObject.toString());
 	}
 }
