@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="GBK" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+
+	<description>
+		标签分页
+		Create By Cc.liu QQ:65422933
+	</description>
+
+	<display-name>javawebTag</display-name>
+	<tlib-version>1.0</tlib-version>
+	<short-name>分页</short-name>
+	<uri>http://com.jzscce.page/tags</uri>
+	<tag>
+		
+		<!-- 实现分页 -->
+		<name>pages</name>
+		<tag-class>com.jzscce.page.tags.SplitPager</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>pageSize</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<!-- 设置页记录大小 -->
+		</attribute>
+		<attribute>
+			<description>设置分页的List集合</description>
+			<name>pageList</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<name>emptyMessage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<!-- 保存分页集合为空时的提示信息 -->
+			
+		</attribute>
+		<attribute>
+			<description>保存分页样式</description>
+			<name>pageFootStyle</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>	
+</taglib>
+
