@@ -1,0 +1,149 @@
+git:分布式版本控制软件
+
+   命令：   
+       1.git add:       将本地文件增加到暂存区
+       2.git commit:    将暂存区的内容提交到本地仓库（即版本库，本地有好多版本库，即有好多分支。默认主分支叫master）
+       3.git push:      将本地仓库的内容提交到远程仓库（即别人的仓库）
+       4.git pull       将远程仓库的内容拉去到本地仓库
+
+
+
+
+git安装步骤：
+默认下一步
+安装完成后
+配置git:本地名和邮箱
+    右键-git bash here
+     $ git config --global user.name "wzw"回车
+     $ git config --global user.email "284146536@qq.com"回车
+    
+     如何查看配置git是否成功：用记事本查看：C:USER:WEIZHIWIE:.gitconfig
+
+搭建远程git服务器（远程仓库）：统一的托管网站（https://github.com/)
+
+配置免秘钥登录（ssh key）:为了在本地和远程仓库之间进行免秘钥交互（先在本地配置，再发送给远程）
+
+                      1.先在本地配置：
+                        右键-git bash here 输入ssh-keygen -t rsa -C 284146536@qq.com 回车 回车 直到看不懂
+                        如果配置成功：会自动生成c/Users/weizhiwei/.ssh/id_rsa.pub.
+
+                      2.发送给远程：
+                       https://github.com/lyywzw--settings--SSH AND ...--new SSH key--title任意、key中输入刚才在本地生成的key(复制id_rsa.pub里的内容粘贴即可)
+
+测试联通信：ssh -T git@github.com 回车 yes 回车
+            如果连通成功：会自动生成c/Users/weizhiwei/.ssh/known_hosts
+
+===============================================================================================
+测试：
+在本地新建git项目
+   1.新建文件夹，在文件夹里面右键git push here
+   2. 输入git init，新建文件夹就会多一个.git目录文件（不要动它）
+
+在远程建立git项目
+   1.https://github.com--Your profile--Repositories--new--输入文件名--创建 会生这个项目的唯一标识符https://github.com/lyywzw/mygitremote1.git
+  
+
+本地项目和远程项目关联
+   git remote add origin git@github.com:lyywzw/gitthree.git
+
+第一次发布项目（本地-->远程）
+1.git add .     //文件-暂存区  (.代表当前目录的所有文件)
+
+2.git commit -m "注释内容"  //暂存区-->本地分支（默认master）
+
+3.git push -u origin master（第一次提交）//将本地项目推送到远程
+
+
+第一次下载项目（远程-->本地）
+git clone git@github.com:lyywzw/gitthree.git（唯一标识符）
+
+
+
+提交（本地-->远程）
+1.git add .     //文件-暂存区  (.代表当前目录的所有文件)
+
+2.git commit -m "注释内容"  //暂存区-->本地分支（默认master）
+
+3.git push origin master //将本地项目推送到远程
+
+
+
+更新（远程-->本地）
+git pull
+
+
+
+====================================================================================
+Egit:在Eclipse中操作git:一般eclipse都支持git
+
+  配置：team-->git-->configuration-->配置邮箱和用户名
+        general-->network--ssh2  生成ssh2目录
+
+第一次发布
+share project-->add to index（加入暂存区）-->commit（提交到本地分支）
+然后将项目推送到远程:team-->remote-->push-->URL:git@github.com:lyywzw/myfirstgitproject.git(远程新建项目的唯一标识符)
+                                             Protocol:根据唯一标识符的类型选择ssh或https
+                                             User:登录网站的用户名
+                                             Password:登录网站的密码-->next
+                                               
+                                             Source ref:选择master-->add-->next-->稍等片刻  finish
+
+
+第一次下载
+impot-->clone-->URL:唯一标识符-->next就行
+
+
+更新
+右键要更新的工程-->Team-->pull
+
+提交
+team --add to index
+team --commit
+team --push
+
+commit时：
+commit and push 和commit的区别：
+
+commit按钮：不能单独的Push某一个文件，只能Push整个项目
+commit and push：可以单独的Push某一个文件
+
+===========================================================
+git冲突解决：（提交的时候尽量与资源库同步）
+发现冲突 进入同步视图  右键-->team-->sychroniza...
+解决：
+     添加到本地暂存区  add to index
+     提交到本地分支 commit
+     更新服务端的分支内容 到本地分支 pull
+     修改冲突：直接修改  或者 merge tool 然后在左边修改冲突
+
+
+
+
+=============================================
+团队协作开发：
+
+github中  该项目 -settings
+增加合作者：Collaborators  加入 合作者：git全名或邮箱
+
+发送邀请链接
+
+
+合作伙伴要做的是：打开该链接、接收邀请、、clone 项目、、、、一样了
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+https://study.163.com/course/courseLearn.htm?courseId=1005991009#/learn/video?lessonId=1053361159&courseId=1005991009
+                         
+
